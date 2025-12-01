@@ -6,7 +6,7 @@
  */
 
 #include "app.h"
-
+#include "led.h"
 #include "user_interface/shell.h"
 
 static char shell_uart2_received_char;

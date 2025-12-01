@@ -6,3 +6,5 @@
  */
 
 #include "motor_control/motor.h"
+#include "stm32g4xx_hal_tim.h"
+#include "stm32g4xx_hal_gpio.h"
