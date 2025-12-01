@@ -27,5 +27,7 @@ Core/Src \
 Core/Src/motor_control \
 Core/Src/user_interface \
 Core/Startup \
+Drivers/CMSIS \
 Drivers/STM32G4xx_HAL_Driver/Src \
+Drivers/STM32G4xx_HAL_Driver \
 
