@@ -9,5 +9,4 @@
 #define INC_INPUT_ANALOG_H_
 
 
-
 #endif /* INC_INPUT_ANALOG_H_ */
