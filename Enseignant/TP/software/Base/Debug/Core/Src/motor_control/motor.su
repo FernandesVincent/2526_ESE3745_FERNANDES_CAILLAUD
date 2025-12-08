@@ -1,3 +1,4 @@
-../Core/Src/motor_control/motor.c:15:6:PWM_init	8	static
-../Core/Src/motor_control/motor.c:26:6:SET_PWM	32	static
-../Core/Src/motor_control/motor.c:60:6:ccr_init	8	static
+../Core/Src/motor_control/motor.c:15:6:PWM_init	16	static
+../Core/Src/motor_control/motor.c:26:6:SET_PWM	40	static
+../Core/Src/motor_control/motor.c:59:6:ccr_init	8	static
+../Core/Src/motor_control/motor.c:63:6:update_PWM_ramp	24	static

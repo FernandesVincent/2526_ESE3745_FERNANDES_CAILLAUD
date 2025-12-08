@@ -1,3 +1,4 @@
 ../Core/Src/motor_control/motor.c:15:6:PWM_init	1
 ../Core/Src/motor_control/motor.c:26:6:SET_PWM	5
-../Core/Src/motor_control/motor.c:60:6:ccr_init	1
+../Core/Src/motor_control/motor.c:59:6:ccr_init	1
+../Core/Src/motor_control/motor.c:63:6:update_PWM_ramp	6
