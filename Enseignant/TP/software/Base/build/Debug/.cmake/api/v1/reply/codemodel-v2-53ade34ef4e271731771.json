@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Test_VSCODE_2",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Test_VSCODE_2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Test_VSCODE_2-Debug-7212d97848391a2ecd73.json",
+					"name" : "Test_VSCODE_2",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/fernandesvincent/Desktop/3A/Actionneur/2526_ESE3745_FERNANDES_CAILLAUD/Enseignant/TP/software/Base/build/Debug",
+		"source" : "/Users/fernandesvincent/Desktop/3A/Actionneur/2526_ESE3745_FERNANDES_CAILLAUD/Enseignant/TP/software/Base"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}
