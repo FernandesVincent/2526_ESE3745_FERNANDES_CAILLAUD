@@ -6,6 +6,7 @@
  */
 
 #include "app.h"
+#include "adc.h"
 
 #include "user_interface/shell.h"
 

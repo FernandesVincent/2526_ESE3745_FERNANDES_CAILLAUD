@@ -1,0 +1,4 @@
+../Core/Src/acquisition/input_analog.c:27:6:input_analog_init	1
+../Core/Src/acquisition/input_analog.c:35:6:ADC_Process_DMA_Conversion	3
+../Core/Src/acquisition/input_analog.c:52:12:sh_get_current	1
+../Core/Src/acquisition/input_analog.c:59:5:init_Imes	1

@@ -19,8 +19,51 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "adc.h"
+#include <stdio.h>
 
 /* USER CODE BEGIN 0 */
+//void ADC1_ConfigChannels(void){
+//    ADC_ChannelConfTypeDef sConfig = {0};
+//
+//    // Canal IN2 (rang 1)
+//    sConfig.Channel = ADC_CHANNEL_2;
+//    sConfig.Rank = ADC_REGULAR_RANK_1;
+//    sConfig.SamplingTime = ADC_SAMPLETIME_247CYCLES_5;
+//    HAL_ADC_ConfigChannel(&hadc1, &sConfig);
+//
+//    // Canal IN12 (rang 2)
+//    sConfig.Channel = ADC_CHANNEL_12;
+//    sConfig.Rank = ADC_REGULAR_RANK_2;
+//    sConfig.SamplingTime = ADC_SAMPLETIME_247CYCLES_5;
+//    HAL_ADC_ConfigChannel(&hadc1, &sConfig);
+//}
+//
+//
+//
+//void Check_ADC(void){
+//    HAL_ADC_Start(&hadc1);
+//
+//    uint32_t adc_val[2];
+//    float voltage[2];
+//    int voltage_mV[2];
+//
+//    for (int i = 0; i < 2; i++)
+//    {
+//        HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+//        adc_val[i] = HAL_ADC_GetValue(&hadc1);
+//
+//        voltage[i] = 3.3f * adc_val[i] / 4095.0f;  // 12 bits ADC = 0-4095
+//        voltage_mV[i] = (int)(voltage[i] * 1000);
+//    }
+//
+//    HAL_ADC_Stop(&hadc1);
+//
+//    printf("IN2 = %lu (%d mV), IN12 = %lu (%d mV)\n\r",
+//           adc_val[0], voltage_mV[0],
+//           adc_val[1], voltage_mV[1]);
+//
+//    HAL_Delay(250);
+//}
 
 /* USER CODE END 0 */
 

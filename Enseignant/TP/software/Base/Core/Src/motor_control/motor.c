@@ -9,6 +9,7 @@
 #include "stm32g4xx_hal_tim.h"
 #include "tim.h"
 #include "user_interface/shell.h"
+#include <math.h>
 
 int MAX_PWM = 17000-2;
 
@@ -72,23 +73,35 @@ int ccr_init() {
   return shell_add(&hshell1, "SETCCR", SET_PWM, "SET PWM MOTOR");
 }
 
-void update_PWM_ramp(int current_PWM, int target_PWM){
+void update_PWM_ramp(int *current_PWM, int target_PWM){
 
-	const int PWM_STEP = MAX_PWM / 100; 
-	const int DELAY_MS = 2;          
+	const int PWM_STEP = (MAX_PWM / 100) > 0 ? (MAX_PWM / 100) : 1;
+	//const int DELAY_MS = 2;
 
-	while (current_PWM != target_PWM)
-	{
-			if (current_PWM < target_PWM)
-					current_PWM = MIN(current_PWM + PWM_STEP, target_PWM);
-			else
-					current_PWM = MAX(current_PWM - PWM_STEP, target_PWM);
+	while (*current_PWM < target_PWM)	//rampe croiss
+	    {
+	        *current_PWM += PWM_STEP;
+	        if (*current_PWM > target_PWM)
+	            *current_PWM = target_PWM;
 
-			__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, current_PWM);
-			__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, MAX_PWM - current_PWM);
+	        __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, *current_PWM);
+	        __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, MAX_PWM - *current_PWM);
 
-			HAL_Delay(DELAY_MS);
-	}
+	        //HAL_Delay(DELAY_MS);
+	    }
+
+	while (*current_PWM > target_PWM)	//rampe decroiss
+	    {
+	        *current_PWM -= PWM_STEP;
+	        if (*current_PWM < target_PWM)
+	            *current_PWM = target_PWM;
+
+	        __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, *current_PWM);
+	        __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, MAX_PWM - *current_PWM);
+
+	        //HAL_Delay(DELAY_MS);
+	    }
+
 }
 
 
@@ -143,9 +156,7 @@ int SET_speed(h_shell_t *h_shell, int argc, char **argv){
 	}
 
 	int target_PWM = (int)(percent * MAX_PWM / 100.0);
-	update_PWM_ramp(old_PWM, target_PWM);
-
-	old_PWM = target_PWM;
+	update_PWM_ramp(&old_PWM, target_PWM);
 
 	size = snprintf(h_shell->print_buffer, SHELL_PRINT_BUFFER_SIZE,"The PWM has been ramped to %d\r\n", target_PWM);
 	h_shell->drv.transmit(h_shell->print_buffer, size);

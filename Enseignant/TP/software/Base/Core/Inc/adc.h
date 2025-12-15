@@ -44,7 +44,8 @@ void MX_ADC1_Init(void);
 void MX_ADC2_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-
+//void ADC1_ConfigChannels(void);
+//void Check_ADC(void);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

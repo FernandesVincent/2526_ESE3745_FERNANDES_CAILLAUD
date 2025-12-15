@@ -26,6 +26,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "app.h"
+#include "motor_control/motor.h"
 
 /* USER CODE END Includes */
 
@@ -100,7 +101,11 @@ int main(void)
 	init_device();
 	PWM_init();
 	ccr_init();
-
+	start_init();
+	stop_init();
+	set_speed_init();
+	init_Imes();
+	//ADC1_ConfigChannels();
 
   /* USER CODE END 2 */
 

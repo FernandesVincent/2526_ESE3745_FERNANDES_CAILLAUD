@@ -42,5 +42,16 @@ En  allimentant le moteur et en regardant le courant et la tension, on voit qu'i
 
 On remarque aussi que lorsqu'il n'y a pas de montée progressive de la PWM lorsque l'on démarre la moteur, il y a un appel de courant qui décharge les condensateurs ce qu'il faut éviter.
 
+## 7 Commande en boucle ouverte, mesure de Vitesse et de courant
+
+### 7.2 Mesure de courant
+
+En regardant le schematic kicad on doit mesurer les courants suivants:  
+- U_Imes sur PA1
+- V_Imes sur PB1  
+
+La relation entre la tension mesurée et le courant est I_mes = (U_out - U_ref) / S avec S la sensibilité du capteur, S = 50 mV/A.
+
+### 7.3 
 
 
